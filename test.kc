@@ -1,0 +1,25 @@
+// ridiculous concept Koncat Source file featuring:
+
+// Import of "normal" Module
+using Koncat.Runtime;
+
+// Import of other services provided
+// by the Koncat Runtime
+using <util>;
+
+// Loops
+for i->10 :+1 =>
+    val <- :util.test #add(i, i+2);
+    out(val);
+
+// Function definitions for IRC
+[A| Int -> Int]
+defirc <util.test> #add2(t0, t1) =>
+    ircout(t0 + t1);
+
+// A Continuous returner
+[CRT| Int -> Int]
+defirc <cont.ret> #testcont() =>
+    using default;
+    for i -> :util.user #getInputArray() =>
+        return(i);
